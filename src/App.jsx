@@ -1,4 +1,5 @@
 // import Dashboard from "./pages/Dashboard";
+import StatCard from "./components/StatCard";
 
 function App() {
   return (
@@ -7,9 +8,15 @@ function App() {
         Clinical Trial Dashboard
       </h1>
       <p className="mt-1 text-sm text-gray-900">
-        Setup in progress - components, routing, and charts coming as I work
-        through a course for React review
+        Trying out StatCard with a few different props
       </p>
+
+      <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <StatCard label="Active Trials" value={5} sub="6 total" />
+        <StatCard label="Patients Enrolled" value={492} sub="of 800 target" />
+        <StatCard label="Open Adverse Events" value={3} />
+        <StatCard label="Overdue Visits" value={1} sub="Past Scheduled Date" />
+      </div>
     </div>
   );
 }
