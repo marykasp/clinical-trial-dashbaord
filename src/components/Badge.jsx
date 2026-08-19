@@ -1,5 +1,9 @@
 const Badge = ({ status }) => {
   let color;
+
+  const needsAttention =
+    status.toLowerCase() === "hold" || status.toLowerCase() === "suspended";
+
   switch (status.toLowerCase()) {
     case "pending":
       color = `bg-gray-100 text-gray-600`;
@@ -27,6 +31,11 @@ const Badge = ({ status }) => {
     <span
       className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${color}`}
     >
+      {needsAttention && (
+        <span aria-hidden="true" className="mr-1">
+          ⚠
+        </span>
+      )}
       {status}
     </span>
   );
