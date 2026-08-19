@@ -1,6 +1,7 @@
 // import Dashboard from "./pages/Dashboard";
 import StatCard from "./components/StatCard";
 import Badge from "./components/Badge";
+import TrialsList from "./components/TrialsList";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         Clinical Trial Dashboard
       </h1>
       <p className="mt-1 text-sm text-gray-900">
-        Trying out different components build for dashboard
+        Trying out different components built for clinical trial dashboard
       </p>
 
       {/* Trial Stat Cards */}
@@ -29,6 +30,9 @@ function App() {
         <Badge status="Closed" />
         <Badge status="Terminated" />
       </div>
+
+      {/* Trial List */}
+      <TrialsList />
     </div>
   );
 }
