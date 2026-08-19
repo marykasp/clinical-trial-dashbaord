@@ -1,29 +1,40 @@
 import { TRIALS } from "../data/trials";
 
 const TrialsList = () => {
+  const headerCellStyle = `px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-400`;
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Trial ID</th>
-          <th>Name</th>
-          <th>Phase</th>
-          <th>Status</th>
-          <th>Disease Team</th>
-        </tr>
-      </thead>
-      <tbody>
-        {TRIALS.map((trial) => (
-          <tr key={trial.id}>
-            <td>{trial.id}</td>
-            <td>{trial.name}</td>
-            <td>{trial.phase}</td>
-            <td>{trial.status}</td>
-            <td>{trial.disease}</td>
+    <div className="overflow-hidden roundex-x1 border border-gray-200 bg-white shadow-sm">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-gray-200 bg-gray-50">
+            <th className={headerCellStyle}>Trial ID</th>
+            <th className={headerCellStyle}>Name</th>
+            <th className={headerCellStyle}>Phase</th>
+            <th className={headerCellStyle}>Status</th>
+            <th className={headerCellStyle}>Disease Team</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {TRIALS.map((trial) => (
+            <tr
+              key={trial.id}
+              className="border-b border-gray-50 last:border-0 hover:bg-gray-50"
+            >
+              <td className="px-4 py-3 font-mono text-xs text-gray-500">
+                {trial.id}
+              </td>
+              <td className="px-4 py-3 font-semibold text-gray-900">
+                {trial.name}
+              </td>
+              <td className="px-4 py-3 text-gray-600">{trial.phase}</td>
+              <td className="px-4 py-3 text-gray-600">{trial.status}</td>
+              <td className="px-4 py-3 text-gray-600">{trial.disease}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
