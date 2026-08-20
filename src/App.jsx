@@ -2,6 +2,7 @@
 import StatCard from "./components/StatCard";
 import Badge from "./components/Badge";
 import TrialsList from "./components/TrialsList";
+import SectionHeader from "./components/SectionHeader";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       </div>
 
       {/* Trial List */}
+      <SectionHeader title="Trials" />
       <TrialsList />
     </div>
   );
