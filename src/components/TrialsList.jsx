@@ -1,10 +1,11 @@
 import { TRIALS } from "../data/trials";
+import Badge from "./Badge";
 
 const TrialsList = () => {
   const headerCellStyle = `px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-400`;
 
   return (
-    <div className="overflow-hidden roundex-x1 border border-gray-200 bg-white shadow-sm">
+    <div className="overflow-hidden round-x1 border border-gray-200 bg-white shadow-sm">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-gray-200 bg-gray-50">
@@ -28,7 +29,9 @@ const TrialsList = () => {
                 {trial.name}
               </td>
               <td className="px-4 py-3 text-gray-600">{trial.phase}</td>
-              <td className="px-4 py-3 text-gray-600">{trial.status}</td>
+              <td className="px-4 py-3 text-gray-600">
+                <Badge status={trial.status} />
+              </td>
               <td className="px-4 py-3 text-gray-600">{trial.disease}</td>
             </tr>
           ))}
