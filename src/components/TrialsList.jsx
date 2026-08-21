@@ -14,7 +14,7 @@ const STATUS = [
 ];
 
 const TrialsList = () => {
-  const [statusFilter, setStatusFilter] = useState("All");
+  const [statusFilter, setStatusFilter] = useState("All"); // "All" = no filter applied, escape hatch
 
   const filteredTrials = TRIALS.filter((trial) => {
     return statusFilter === "All" || trial.status === statusFilter;
