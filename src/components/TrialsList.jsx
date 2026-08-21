@@ -14,13 +14,23 @@ const STATUS = [
 ];
 
 const TrialsList = () => {
-  // const [statusFilter, setStatusFilter] = useState("All");
+  const [statusFilter, setStatusFilter] = useState("All");
+
+  const filteredTrials = TRIALS.filter((trial) => {
+    return statusFilter === "All" || trial.status === statusFilter;
+  });
+
+  const handleStatusFilter = (status) => {
+    setStatusFilter(status);
+  };
+
   return (
     <>
       <div className="mb-2">
         {STATUS.map((status) => (
           <button
             key={status}
+            onClick={() => handleStatusFilter(status)}
             className="mr-2 px-3 py-1 rounded-lg border border-gray-200 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-50"
           >
             {status}
@@ -39,7 +49,7 @@ const TrialsList = () => {
             </tr>
           </thead>
           <tbody>
-            {TRIALS.map((trial) => (
+            {filteredTrials.map((trial) => (
               <tr
                 key={trial.id}
                 className="border-b border-gray-50 last:border-0 hover:bg-gray-50"
