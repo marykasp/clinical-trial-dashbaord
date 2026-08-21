@@ -17,6 +17,8 @@
 
 > What is `useState`? Why can't you just mutate a variable directly and expect a re-render? What triggers a re-render?
 
+State updates trigger a re-render of the component. React will not re-render the component if variables or props are mutated (which you should never mutate).
+
 ---
 
 ## Code examples
@@ -55,6 +57,10 @@ Wired real interactivity into TrialsList: statusFilter state (default "All") dri
 ## What I Learned:
 
 **Pattern to remember**: the `OR` escape hatch. sentinelValue === "no filter" || item.field === sentinelValue. The sentinel (e.g. "All") always goes first in the || — because of short-circuit evaluation, when it matches, the real comparison never even runs, so everything passes. Reused this same shape for both status filtering and (later) search filtering.
+
+### Batched State Updates
+
+Batched state updates. Multiple setState calls in the same event handler don't each trigger their own re-render — React batches them into one. Bigger gotcha: setCount(count + 1) called twice in one handler only increments by 1 total, not 2, because count is a value frozen by closure at the start of that render — both calls use the same stale snapshot. Fix: functional updates, setCount(prev => prev + 1), **where each call receives the actual pending value instead of the frozen one**. Tested this directly with a scratch counter demo (not committed — TrialsList doesn't currently have a case that needs this, since handleStatusFilter only calls its setter once per click).
 
 ## Questions / things to revisit
 
