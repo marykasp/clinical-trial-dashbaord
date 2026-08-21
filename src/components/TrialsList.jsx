@@ -31,7 +31,7 @@ const TrialsList = () => {
           <button
             key={status}
             onClick={() => handleStatusFilter(status)}
-            className="mr-2 px-3 py-1 rounded-lg border border-gray-200 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-50"
+            className={`${status === statusFilter ? `bg-gray-700 text-white` : `text-gray-600 border border-gray-200 hover:bg-gray-50`} mr-2 px-3 py-1 rounded-lg text-xs font-medium transition-colors`}
           >
             {status}
           </button>
