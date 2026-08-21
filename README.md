@@ -15,11 +15,11 @@ Build a full clinical data dashboard with tables, cards, charts and filtering �
 
 | Course Topic          | What to Build                        | Status         |
 | --------------------- | ------------------------------------ | -------------- |
-| Components & JSX      | `StatCard`, `Badge`, `SectionHeader` | ⬜ Not started |
-| Props                 | Pass data into StatCard              | ⬜ Not started |
-| State                 | Search input, filter buttons         | ⬜ Not started |
-| Lists & Keys          | Render trials/patients tables        | ⬜ Not started |
-| Conditional Rendering | Color coded badges by status         | ⬜ Not started |
+| Components & JSX      | `StatCard`, `Badge`, `SectionHeader` | ✅ Done        |
+| Props                 | Pass data into StatCard              | ✅ Done        |
+| State                 | Search input, filter buttons         | 🔄 In Progress |
+| Lists & Keys          | Render trials/patients tables        | ✅ Done        |
+| Conditional Rendering | Color coded badges by status         | ✅ Done        |
 | useEffect             | Simulate data fetching               | ⬜ Not started |
 | React Router          | Add real page navigation             | ⬜ Not started |
 | Recharts              | Add charts to dashboard              | ⬜ Not started |
