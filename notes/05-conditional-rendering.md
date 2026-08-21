@@ -66,6 +66,10 @@ switch (status.toLowerCase()) {
   exist in the tree or not / which element renders. Conditional styling =
   same element every time, different attribute value.
 
+### Conditional style rendering
+
+Added active/inactive styling to the status filter buttons using a ternary inside a template literal (status === statusFilter ? "bg-gray-700 text-white" : "...") — a genuine two-way conditional-rendering-adjacent case, contrasting with Badge's switch (many-way branching). Hit a subtle bug: no space between the ternary's interpolated result and the following literal classes caused two classes to merge into one invalid token (text-whitemr-2), which failed silently like the earlier typo bugs — template literal interpolation doesn't insert whitespace on its own, spacing has to be written explicitly around ${...}.
+
 ---
 
 ## Questions / things to revisit
