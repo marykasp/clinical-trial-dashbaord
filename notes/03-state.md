@@ -11,6 +11,16 @@
 - Search input (e.g. filter the Trials or Patients table by name/id)
 - Filter buttons (e.g. filter Adverse Events by status/severity)
 
+--
+
+## Up Next ➡️
+
+### Backlog for TrialsList:
+
+Filter by disease team (dropdown or buttons, same .filter() pattern as status)
+Filter by phase (same pattern again)
+Search by trial name — blocked on learning Forms/controlled inputs first, since typing search text needs onChange, which the course hasn't covered yet
+
 ---
 
 ## Key concepts (in my own words)
