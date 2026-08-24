@@ -1,42 +1,11 @@
-import { TRIALS } from "../data/trials";
-import { useState } from "react";
 import Badge from "./Badge";
 
 const headerCellStyle = `px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-400`;
-const STATUS = [
-  "All",
-  "Active",
-  "Pending",
-  "Suspended",
-  "Hold",
-  "Closed",
-  "Terminated",
-];
 
-const TrialsList = () => {
-  const [statusFilter, setStatusFilter] = useState("All"); // "All" = no filter applied, escape hatch
-
-  const filteredTrials = TRIALS.filter((trial) => {
-    return statusFilter === "All" || trial.status === statusFilter;
-  });
-
-  const handleStatusFilter = (status) => {
-    setStatusFilter(status);
-  };
-
+const TrialsList = ({ trials }) => {
+  console.log(trials);
   return (
     <>
-      <div className="mb-2">
-        {STATUS.map((status) => (
-          <button
-            key={status}
-            onClick={() => handleStatusFilter(status)}
-            className={`${status === statusFilter ? `bg-gray-700 text-white` : `text-gray-600 border border-gray-200 hover:bg-gray-50`} mr-2 px-3 py-1 rounded-lg text-xs font-medium transition-colors`}
-          >
-            {status}
-          </button>
-        ))}
-      </div>
       <div className="overflow-hidden round-x1 border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-sm">
           <thead>
@@ -49,7 +18,7 @@ const TrialsList = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredTrials.map((trial) => (
+            {trials.map((trial) => (
               <tr
                 key={trial.id}
                 className="border-b border-gray-50 last:border-0 hover:bg-gray-50"

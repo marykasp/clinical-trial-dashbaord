@@ -1,8 +1,8 @@
 // import Dashboard from "./pages/Dashboard";
 import StatCard from "./components/StatCard";
 import Badge from "./components/Badge";
-import TrialsList from "./components/TrialsList";
 import SectionHeader from "./components/SectionHeader";
+import TrialsPage from "./components/TrialsPage";
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
 
       {/* Trial List */}
       <SectionHeader title="Trials" />
-      <TrialsList />
+      <TrialsPage />
     </div>
   );
 }
