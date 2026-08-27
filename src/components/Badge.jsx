@@ -23,6 +23,18 @@ const Badge = ({ status }) => {
     case "terminated":
       color = "bg-red-100 text-red-700";
       break;
+    case "registered":
+      color = "bg-gray-100 text-gray-600";
+      break;
+    case "screen fail":
+      color = "bg-rose-100 text-rose-700";
+      break;
+    case "on study":
+      color = "bg-emerald-100 text-emerald-700";
+      break;
+    case "off study":
+      color = "bg-indigo-100 text-indigo-700";
+      break;
     default:
       color = `bg-gray-200 text-gray-700`;
   }
