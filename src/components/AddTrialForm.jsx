@@ -12,6 +12,9 @@ const AddTrialForm = ({ onAddTrial }) => {
     };
 
     onAddTrial(newTrial);
+
+    // Reset all native DOM inputs back to default values
+    event.target.reset();
   };
 
   // styling variables
