@@ -1,12 +1,13 @@
 import TrialsList from "./TrialsList";
-import StatusFilter from "./statusFilter";
+import StatusFilter from "./StatusFilter";
 import { TRIALS } from "../data/trials";
 import { useState } from "react";
 
 const TrialsPage = () => {
+  const [trials, setTrials] = useState(TRIALS);
   const [statusFilter, setStatusFilter] = useState("All"); // "All" = no filter applied, escape hatch
 
-  const filteredTrials = TRIALS.filter((trial) => {
+  const filteredTrials = trials.filter((trial) => {
     return statusFilter === "All" || trial.status === statusFilter;
   });
 

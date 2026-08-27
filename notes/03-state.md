@@ -62,6 +62,8 @@ const filteredTrials = TRIALS.filter((trial) => {
 
 Wired real interactivity into TrialsList: statusFilter state (default "All") drives a .filter() call on TRIALS before mapping, and a row of buttons (one per status, generated from a STATUS array) call setStatusFilter via a named handleStatusFilter function on click. Learned that passing an argument to a handler requires wrapping it in an arrow function (onClick={() => handleStatusFilter(status)}) — passing the named function directly (onClick={handleStatusFilter}) would call it with the click event instead of the value I actually need.
 
+Converted trials in TrialsPage from a direct import to useState(TRIALS), using the import only as the seed value. No visual change — this step exists purely to make the data mutable so a future Add Trial form has state to append to. Also hit a case-sensitivity import bug: ./statusFilter vs. the actual StatusFilter.jsx works on macOS (case-insensitive filesystem) but would break on Linux-based deploy platforms — a bug invisible in local dev.
+
 ---
 
 ## What I Learned:
