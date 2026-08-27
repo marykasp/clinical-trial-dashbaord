@@ -1,17 +1,7 @@
-const STATUS = [
-  "All",
-  "Active",
-  "Pending",
-  "Suspended",
-  "Hold",
-  "Closed",
-  "Terminated",
-];
-
-const StatusFilter = ({ statusFilter, onSetStatusFilter }) => {
+const StatusFilter = ({ statusFilter, onSetStatusFilter, options }) => {
   return (
     <div className="mb-2">
-      {STATUS.map((status) => (
+      {options.map((status) => (
         <button
           key={status}
           onClick={() => onSetStatusFilter(status)}
