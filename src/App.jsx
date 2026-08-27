@@ -2,7 +2,7 @@
 import StatCard from "./components/StatCard";
 import Badge from "./components/Badge";
 import SectionHeader from "./components/SectionHeader";
-import TrialsPage from "./components/TrialsPage";
+import TrialsPage from "./pages/TrialsPage";
 
 function App() {
   return (

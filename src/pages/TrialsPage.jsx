@@ -1,6 +1,6 @@
-import TrialsList from "./TrialsList";
-import StatusFilter from "./StatusFilter";
-import AddTrialForm from "./AddTrialForm";
+import TrialsList from "../components/TrialsList";
+import StatusFilter from "../components/StatusFilter";
+import AddTrialForm from "../components/AddTrialForm";
 import { TRIALS } from "../data/trials";
 import { useState } from "react";
 
