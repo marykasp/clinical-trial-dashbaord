@@ -1,5 +1,5 @@
 import TrialsList from "../components/TrialsList";
-import StatusFilter from "../components/StatusFilter";
+import StatusFilter from "../components/statusFilter";
 import AddTrialForm from "../components/AddTrialForm";
 import { TRIALS } from "../data/trials";
 import { useState } from "react";

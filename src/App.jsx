@@ -3,6 +3,7 @@ import StatCard from "./components/StatCard";
 import Badge from "./components/Badge";
 import SectionHeader from "./components/SectionHeader";
 import TrialsPage from "./pages/TrialsPage";
+import PatientsPage from "./pages/PatientsPage";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
       {/* Trial List */}
       <SectionHeader title="Trials" />
       <TrialsPage />
+
+      {/* Patient List */}
+      <SectionHeader title="Patients" />
+      <PatientsPage />
     </div>
   );
 }
