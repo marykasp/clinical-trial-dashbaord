@@ -18,7 +18,9 @@
 
 > What's the difference between a controlled and uncontrolled input? Why does `onSubmit` need `event.preventDefault()`? What does `FormData` actually do, and why read values by `name` attribute instead of grabbing each input directly?
 
----
+Uncontrolled + FormData (current approach) fits "collect on submit, nothing dynamic." Controlled inputs (state + onChange per field) fit when the UI needs to react to the value as it's typed — live validation, disabled/enabled submit, or pre-filling an edit form.
+
+- Deliberately kept `AddTrialForm` uncontrolled since it doesn't need any of that yet; planning to use controlled inputs when building the edit-trial form, since pre-filling from existing data is much more natural that way.
 
 ## Code examples
 
